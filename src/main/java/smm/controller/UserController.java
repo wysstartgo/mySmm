@@ -31,5 +31,20 @@ public class UserController {
 		request.setAttribute("user", u);
 		return "showUser";
 	}
+	
+	@RequestMapping("/addUser")
+	public String addUser(HttpServletRequest request){
+		String username = (String) request.getAttribute("username");
+		String password = (String) request.getAttribute("password");
+		System.out.println("=========================");
+		System.out.println(username);
+		System.out.println(password);
+		System.out.println("=========================");
+		User user = new User();
+		user.setName(username);
+		user.setPwd(password);
+		userService.insert(user);
+		return "addUser";
+	}
 
 }

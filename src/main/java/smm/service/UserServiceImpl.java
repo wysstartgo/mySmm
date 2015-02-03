@@ -38,4 +38,8 @@ public class UserServiceImpl implements UserServiceI {
 		return userMapper.getAll3();
 	}
 
+	public void insert(User record) {
+		userMapper.insert(record);
+	}
+
 }
