@@ -1,8 +1,8 @@
-package sy.service;
+package smm.service;
 
 import java.util.List;
 
-import sy.model.User;
+import smm.model.User;
 
 public interface UserServiceI {
 

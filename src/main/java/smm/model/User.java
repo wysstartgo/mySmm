@@ -1,4 +1,4 @@
-package sy.model;
+package smm.model;
 
 import java.util.Date;
 import java.util.List;

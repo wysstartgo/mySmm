@@ -1,4 +1,4 @@
-package sy.model;
+package smm.model;
 
 public class RoleResource {
     private String id;

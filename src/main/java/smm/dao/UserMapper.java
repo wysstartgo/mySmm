@@ -1,8 +1,8 @@
-package sy.dao;
+package smm.dao;
 
 import java.util.List;
 
-import sy.model.User;
+import smm.model.User;
 
 public interface UserMapper {
 	int deleteByPrimaryKey(String id);

@@ -1,6 +1,6 @@
-package sy.dao;
+package smm.dao;
 
-import sy.model.RoleResource;
+import smm.model.RoleResource;
 
 public interface RoleResourceMapper {
     int deleteByPrimaryKey(String id);

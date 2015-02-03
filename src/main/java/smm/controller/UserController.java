@@ -1,4 +1,4 @@
-package sy.controller;
+package smm.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sy.model.User;
-import sy.service.UserServiceI;
+import smm.model.User;
+import smm.service.UserServiceI;
 
 @Controller
 @RequestMapping("/userController")

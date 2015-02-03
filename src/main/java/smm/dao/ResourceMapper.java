@@ -1,6 +1,6 @@
-package sy.dao;
+package smm.dao;
 
-import sy.model.Resource;
+import smm.model.Resource;
 
 public interface ResourceMapper {
     int deleteByPrimaryKey(String id);

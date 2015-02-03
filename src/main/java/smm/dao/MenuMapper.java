@@ -1,6 +1,6 @@
-package sy.dao;
+package smm.dao;
 
-import sy.model.Menu;
+import smm.model.Menu;
 
 public interface MenuMapper {
     int deleteByPrimaryKey(String id);
