@@ -1,6 +1,6 @@
-package smm.dao;
+package sy.dao;
 
-import smm.model.Online;
+import sy.model.Online;
 
 public interface OnlineMapper {
     int deleteByPrimaryKey(String id);

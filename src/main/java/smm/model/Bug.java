@@ -1,9 +1,11 @@
-package smm.model;
+package sy.model;
+
+import java.util.Date;
 
 public class Bug {
     private String id;
 
-    private Long createdatetime;
+    private Date createdatetime;
 
     private String name;
 
@@ -17,11 +19,11 @@ public class Bug {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long getCreatedatetime() {
+    public Date getCreatedatetime() {
         return createdatetime;
     }
 
-    public void setCreatedatetime(Long createdatetime) {
+    public void setCreatedatetime(Date createdatetime) {
         this.createdatetime = createdatetime;
     }
 

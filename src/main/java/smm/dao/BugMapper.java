@@ -1,6 +1,6 @@
-package smm.dao;
+package sy.dao;
 
-import smm.model.Bug;
+import sy.model.Bug;
 
 public interface BugMapper {
     int deleteByPrimaryKey(String id);

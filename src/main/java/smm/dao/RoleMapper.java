@@ -1,6 +1,6 @@
-package smm.dao;
+package sy.dao;
 
-import smm.model.Role;
+import sy.model.Role;
 
 public interface RoleMapper {
     int deleteByPrimaryKey(String id);

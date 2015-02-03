@@ -1,11 +1,13 @@
-package smm.model;
+package sy.model;
+
+import java.util.Date;
 
 public class Online {
     private String id;
 
     private String ip;
 
-    private Long logindatetime;
+    private Date logindatetime;
 
     private String loginname;
 
@@ -25,11 +27,11 @@ public class Online {
         this.ip = ip == null ? null : ip.trim();
     }
 
-    public Long getLogindatetime() {
+    public Date getLogindatetime() {
         return logindatetime;
     }
 
-    public void setLogindatetime(Long logindatetime) {
+    public void setLogindatetime(Date logindatetime) {
         this.logindatetime = logindatetime;
     }
 

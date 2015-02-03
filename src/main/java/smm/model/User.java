@@ -1,53 +1,86 @@
-package smm.model;
+package sy.model;
+
+import java.util.Date;
+import java.util.List;
 
 public class User {
-    private String id;
+	private List<UserRole> userRoles;
 
-    private Long createdatetime;
+	public List<UserRole> getUserRoles() {
+		return userRoles;
+	}
 
-    private Long modifydatatime;
+	public void setUserRoles(List<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
 
-    private String name;
+	private String id;
 
-    private String pwd;
+	private Date createdatetime;
 
-    public String getId() {
-        return id;
-    }
+	private Date modifydatetime;
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
+	private String name;
 
-    public Long getCreatedatetime() {
-        return createdatetime;
-    }
+	private String pwd;
 
-    public void setCreatedatetime(Long createdatetime) {
-        this.createdatetime = createdatetime;
-    }
+	private Date createTime;
 
-    public Long getModifydatatime() {
-        return modifydatatime;
-    }
+	private Date updateTime;
 
-    public void setModifydatatime(Long modifydatatime) {
-        this.modifydatatime = modifydatatime;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(String id) {
+		this.id = id == null ? null : id.trim();
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public Date getCreatedatetime() {
+		return createdatetime;
+	}
 
-    public String getPwd() {
-        return pwd;
-    }
+	public void setCreatedatetime(Date createdatetime) {
+		this.createdatetime = createdatetime;
+	}
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd == null ? null : pwd.trim();
-    }
+	public Date getModifydatetime() {
+		return modifydatetime;
+	}
+
+	public void setModifydatetime(Date modifydatetime) {
+		this.modifydatetime = modifydatetime;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd == null ? null : pwd.trim();
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
 }

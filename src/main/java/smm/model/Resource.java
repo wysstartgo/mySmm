@@ -1,4 +1,4 @@
-package smm.model;
+package sy.model;
 
 import java.math.BigDecimal;
 
