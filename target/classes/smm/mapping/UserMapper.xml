@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sy.dao.UserMapper">
-	<resultMap id="BaseResultMap" type="sy.model.User">
+	<resultMap id="BaseResultMap" type="smm.model.User">
 		<id column="ID" property="id" jdbcType="VARCHAR" />
 		<result column="CREATEDATETIME" property="createdatetime" jdbcType="TIMESTAMP" />
 		<result column="MODIFYDATETIME" property="modifydatetime" jdbcType="TIMESTAMP" />
@@ -23,7 +23,7 @@
 		delete from tuser
 		where ID = #{id,jdbcType=VARCHAR}
 	</delete>
-	<insert id="insert" parameterType="sy.model.User">
+	<insert id="insert" parameterType="smm.model.User">
 		insert into tuser (ID, CREATEDATETIME, MODIFYDATETIME,
 		NAME, PWD, CREATE_TIME,
 		UPDATE_TIME)
@@ -31,7 +31,7 @@
 		#{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE},
 		#{updateTime,jdbcType=DATE})
 	</insert>
-	<insert id="insertSelective" parameterType="sy.model.User">
+	<insert id="insertSelective" parameterType="smm.model.User">
 		insert into tuser
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="id != null">
@@ -80,7 +80,7 @@
 			</if>
 		</trim>
 	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="sy.model.User">
+	<update id="updateByPrimaryKeySelective" parameterType="smm.model.User">
 		update tuser
 		<set>
 			<if test="createdatetime != null">
@@ -104,7 +104,7 @@
 		</set>
 		where ID = #{id,jdbcType=VARCHAR}
 	</update>
-	<update id="updateByPrimaryKey" parameterType="sy.model.User">
+	<update id="updateByPrimaryKey" parameterType="smm.model.User">
 		update tuser
 		set CREATEDATETIME = #{createdatetime,jdbcType=TIMESTAMP},
 		MODIFYDATETIME = #{modifydatetime,jdbcType=TIMESTAMP},
@@ -116,7 +116,7 @@
 	</update>
 
 
-	<select id="selectUserRole" parameterType="java.lang.String" resultType="sy.model.UserRole">
+	<select id="selectUserRole" parameterType="java.lang.String" resultType="smm.model.UserRole">
 		SELECT
 		tuser_trole.ID,
 		tuser_trole.ROLE_ID,
@@ -125,15 +125,15 @@
 		tuser_trole
 		where tuser_trole.user_id=#{id,jdbcType=VARCHAR}
 	</select>
-	<resultMap type="sy.model.User" id="userResultMap" extends="BaseResultMap">
+	<resultMap type="smm.model.User" id="userResultMap" extends="BaseResultMap">
 		<collection property="userRoles" column="ID" javaType="list" select="selectUserRole" />
 	</resultMap>
 	<select id="getAll" resultMap="userResultMap">
 		select ID, CREATEDATETIME, MODIFYDATETIME, NAME, PWD from tuser
 	</select>
 
-	<resultMap type="sy.model.User" id="userResultMap2" extends="BaseResultMap">
-		<collection property="userRoles" javaType="list" ofType="sy.model.UserRole">
+	<resultMap type="smm.model.User" id="userResultMap2" extends="BaseResultMap">
+		<collection property="userRoles" javaType="list" ofType="smm.model.UserRole">
 			<id property="id" column="userrole_id" />
 			<result column="role_id" property="roleId" />
 			<result property="userId" column="user_id" />
@@ -157,13 +157,13 @@
 	</select>
 
 
-	<resultMap type="sy.model.User" id="userResultMap3" extends="BaseResultMap">
-		<collection property="userRoles" javaType="list" ofType="sy.model.UserRole">
+	<resultMap type="smm.model.User" id="userResultMap3" extends="BaseResultMap">
+		<collection property="userRoles" javaType="list" ofType="smm.model.UserRole">
 			<id property="id" column="userrole_id" />
 			<result column="role_id" property="roleId" />
 			<result property="userId" column="user_id" />
 
-			<association property="role" javaType="sy.model.Role">
+			<association property="role" javaType="smm.model.Role">
 				<id property="id" column="role_id" />
 				<result property="text" column="role_text" />
 			</association>

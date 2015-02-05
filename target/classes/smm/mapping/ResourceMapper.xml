@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sy.dao.ResourceMapper" >
-  <resultMap id="BaseResultMap" type="sy.model.Resource" >
+  <resultMap id="BaseResultMap" type="smm.model.Resource" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="SEQ" property="seq" jdbcType="DECIMAL" />
     <result column="TEXT" property="text" jdbcType="VARCHAR" />
@@ -21,13 +21,13 @@
     delete from tresource
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="sy.model.Resource" >
+  <insert id="insert" parameterType="smm.model.Resource" >
     insert into tresource (ID, SEQ, TEXT, 
       URL, PID)
     values (#{id,jdbcType=VARCHAR}, #{seq,jdbcType=DECIMAL}, #{text,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="sy.model.Resource" >
+  <insert id="insertSelective" parameterType="smm.model.Resource" >
     insert into tresource
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="sy.model.Resource" >
+  <update id="updateByPrimaryKeySelective" parameterType="smm.model.Resource" >
     update tresource
     <set >
       <if test="seq != null" >
@@ -82,7 +82,7 @@
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="sy.model.Resource" >
+  <update id="updateByPrimaryKey" parameterType="smm.model.Resource" >
     update tresource
     set SEQ = #{seq,jdbcType=DECIMAL},
       TEXT = #{text,jdbcType=VARCHAR},

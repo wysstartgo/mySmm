@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sy.dao.OnlineMapper" >
-  <resultMap id="BaseResultMap" type="sy.model.Online" >
+  <resultMap id="BaseResultMap" type="smm.model.Online" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="IP" property="ip" jdbcType="VARCHAR" />
     <result column="LOGINDATETIME" property="logindatetime" jdbcType="TIMESTAMP" />
@@ -20,13 +20,13 @@
     delete from tonline
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="sy.model.Online" >
+  <insert id="insert" parameterType="smm.model.Online" >
     insert into tonline (ID, IP, LOGINDATETIME, 
       LOGINNAME)
     values (#{id,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{logindatetime,jdbcType=TIMESTAMP}, 
       #{loginname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="sy.model.Online" >
+  <insert id="insertSelective" parameterType="smm.model.Online" >
     insert into tonline
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="sy.model.Online" >
+  <update id="updateByPrimaryKeySelective" parameterType="smm.model.Online" >
     update tonline
     <set >
       <if test="ip != null" >
@@ -72,7 +72,7 @@
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="sy.model.Online" >
+  <update id="updateByPrimaryKey" parameterType="smm.model.Online" >
     update tonline
     set IP = #{ip,jdbcType=VARCHAR},
       LOGINDATETIME = #{logindatetime,jdbcType=TIMESTAMP},
